@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import RiverInformation from './RiverInformation';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const title = screen.getByText(/Worlds Longest Rivers/i);
+  render(<RiverInformation />);
+  const title = screen.getByText(/River Information/i);
   expect(title).toBeInTheDocument();
 });

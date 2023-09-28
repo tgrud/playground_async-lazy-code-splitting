@@ -26,9 +26,15 @@
 
 import React from 'react';
 import './App.css';
+import RiverInformation from '../RiverInformation/RiverInformation';
 
 function App() {
-  return <>Test</>;
+  return (
+    <div className='wrapper'>
+      <h1>Worlds Longest Rivers</h1>
+      <RiverInformation />
+    </div>
+  );
 }
 
 export default App;
