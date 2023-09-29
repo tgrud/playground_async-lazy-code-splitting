@@ -3,15 +3,20 @@ import PropTypes from 'prop-types';
 import { getRiverInformation } from '../../services/rivers';
 
 export default function RiverInformation({ name }) {
-  const [riverInformation, setRiverInformation] = useState({});
+  const [riverInformation, setRiverInformation] = useState();
 
   useEffect(() => {
+    let mounted = true;
     getRiverInformation(name)
-    .then(data =>
-      setRiverInformation(data)
-    );
+    .then(data => {
+      if(mounted) {
+        setRiverInformation(data)
+      }
+    });
+    return () => {
+     mounted = false;
+   }
   }, [name])
-
 
   return(
     <div>
@@ -26,5 +31,5 @@ export default function RiverInformation({ name }) {
 }
 
 RiverInformation.propTypes = {
- name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 }

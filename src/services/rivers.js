@@ -19,14 +19,14 @@ const rivers = {
     length: '6,275 km',
     outflow: 'Gulf of Mexico'
   }
- }
- 
- export function getRiverInformation(name) {
-   return new Promise((resolve) => {
-     setTimeout(() => {
-       resolve(
-         rivers[name]
-       )
-     }, 1500)
-   })
- }
+}
+
+export function getRiverInformation(name) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        rivers[name]
+      )
+    }, 1500)
+  })
+}
